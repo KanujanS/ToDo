@@ -4,10 +4,12 @@ import Task from "./components/Task";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
+
   const fetchTasks = async () => {
     const res = await fetch("http://localhost:5009/api/tasks");
     setTasks(await res.json());
   };
+
   const addTask = async (data) => {
     await fetch("http://localhost:5009/api/tasks", {
       method: "POST",
@@ -32,17 +34,16 @@ const App = () => {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      await fetchTasks();
-    };
-    fetchData();
+    fetchTasks();
   }, []);
 
   return (
-    <div className="flex mx-10 mt-10 p-20">
-      <AddTask onAdd={addTask} />
-      <hr className="mx-20 border-2 h-157 text-blue-900" />
-      <Task tasks={tasks} onDone={markDone} onDelete={deleteTask}/>
+    <div className="p-4 md:p-10 lg:p-25 max-w-screen-xl mx-auto">
+      <div className="flex flex-col lg:flex-row gap-10">
+        <AddTask onAdd={addTask} />
+        <div className="hidden lg:block border-r-2 border-blue-900"></div>
+        <Task tasks={tasks} onDone={markDone} onDelete={deleteTask} />
+      </div>
     </div>
   );
 };
