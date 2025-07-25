@@ -2,7 +2,8 @@
 
 A full stack Todo application.
 
-<img width="1363" height="792" alt="Screenshot 2025-07-25 at 21 26 49" src="https://github.com/user-attachments/assets/c7e092eb-1af5-4107-a56e-10e8cf199475" />
+<img width="1347" height="788" alt="Screenshot 2025-07-25 at 23 27 43" src="https://github.com/user-attachments/assets/6048d5da-b59a-41d4-abde-8168aba229bc" />
+
 
 
 ---
