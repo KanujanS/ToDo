@@ -1,10 +1,14 @@
 import db from '../config/db.js';
 
 export const getTasks = async (req, res) => {
-  const [rows] = await db.query(
+  try { const [rows] = await db.query(
     'SELECT * FROM tasks WHERE completed = false ORDER BY created_at DESC LIMIT 5'
   );
   res.json(rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Server error' });
+  }
 };
 
 export const addTask = async (req, res) => {
