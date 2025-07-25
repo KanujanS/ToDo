@@ -1,7 +1,9 @@
 # Todo Full Stack App
 
 A full stack Todo application.
-![App Screenshot](image1)
+
+<img width="1363" height="792" alt="Screenshot 2025-07-25 at 21 26 49" src="https://github.com/user-attachments/assets/c7e092eb-1af5-4107-a56e-10e8cf199475" />
+
 
 ---
 
