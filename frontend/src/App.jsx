@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AddTask from './components/AddTask'
 import Task from './components/Task'
 
 const App = () => {
   const [tasks,setTasks] = useState([]);
   const fetchTasks = async()=> {
-    const res = await fetch('/api/tasks');
+    const res = await fetch('http://localhost:5000/api/tasks');
     setTasks(await res.json());
   };
   const addTask = async data => {
@@ -18,7 +18,12 @@ const App = () => {
     await fetch(`/api/tasks/${id}/done`, { method:'PATCH' });
     fetchTasks();
   };
-  useEffect(fetchTasks, []);
+  useEffect(() => {
+  const fetchData = async () => {
+    await fetchTasks();
+  };
+  fetchData();
+}, []);
   return (
     <div className='flex mx-10 mt-10 p-20'>
       <AddTask onAdd={addTask}/>

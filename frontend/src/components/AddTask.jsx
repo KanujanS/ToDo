@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 
-const AddTask = (onAdd) => {
+const AddTask = ({onAdd}) => {
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
     const submit = e =>{
